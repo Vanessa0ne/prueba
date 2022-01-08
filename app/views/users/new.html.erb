@@ -1,0 +1,18 @@
+<h1> Ingreso lender </h1>
+<div class="container pt-3">
+<div class="container-sm border">
+<div class="container">
+  <div class="row">
+      <%= simple_form_for @lender do |f| %>
+        <%= f.input :name, label: "nombre" %>
+        <%= f.input :last_name, label: "Apellido" %>
+        <%= f.input :phone, label: "email" %>
+        <%= f.input :email, label: "phono" %>
+        <%= f.input :state, label: "estado" %>
+        <%= f.submit "Crear", class: 'btn btn-flat' %>
+        <%= link_to "Eliminar", lenders_path, data: {confirm: "¿Estás seguro de eliminar #{@lender}?"}, class: 'btn btn-flat' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= link_to "Volver", root_path, class:'btn btn-flat'%>

@@ -1,0 +1,35 @@
+<li><%= link_to "Nuevo lender", new_lender_path, class:'btn btn-primary'%></li>
+
+<html>
+  <body>
+  <div class="container">
+  <table class="styled-table">
+    <h1 class="text-center">lender como futuro o nuevo cliente</h1>
+    <h1> lender </h1>
+  <table class="styled-table">
+    <head>
+        <tr>
+            <th>name</th>
+            <th>last_name</th>
+            <th>phone</th>
+            <th>email</th>
+            <th>state</th>
+            <th>Show</th>
+            <th>Edit</th>
+            <th>delete</th>
+        </tr>
+    </head>
+    <% @lenders.each do |lender| %>
+     <tr>
+      <td><%= lender.name %></td>
+      <td><%= lender.last_name %></td>
+      <td><%= lender.phone %></td>
+      <td><%= lender.email %></td>
+      <td><%= lender.state %></td>
+      <td><%= link_to 'Show', lender_path(lender) %></td>
+      <td><%= link_to 'Edit', edit_lender_path(lender) %></td>
+      <td><%= link_to 'Destroy', prospect_path(lender),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+     <% end %>
+    </table>
